@@ -1,5 +1,5 @@
 
-let saldoFinal = saldoVitorias(300, 115);
+let saldoFinal = saldoVitorias(280, 115);
 let nivelHeroi = nivel(saldoFinal);
 console.log(`Seu saldo de vitórias é ${saldoFinal} e seu nível é ${nivelHeroi}`);
 
