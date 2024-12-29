@@ -1,8 +1,22 @@
+const readline = require('readline');
 
-let saldoFinal = saldoVitorias(300, 115);
-let nivelHeroi = nivel(saldoFinal);
-console.log(`Seu saldo de vitórias é ${saldoFinal} e seu nível é ${nivelHeroi}`);
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
+rl.question("Digite o número de vitórias: ", (vitorias) => {
+    rl.question("Digite o número de derrotas: ", (derrotas) => {
+        vitorias = parseInt(vitorias);
+        derrotas = parseInt(derrotas);
+
+        let saldoFinal = saldoVitorias(vitorias, derrotas);
+        let nivelHeroi = nivel(saldoFinal);
+        console.log(`Seu saldo de vitórias é ${saldoFinal} e seu nível é ${nivelHeroi}`);
+
+        rl.close();
+    });
+});
 
 function saldoVitorias (vitorias = 0, derrotas = 0) {
     return vitorias - derrotas;
